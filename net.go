@@ -461,7 +461,7 @@ func ackFunc(oboundP chan *PacketAndToken, persist Store, packet *packets.Publis
 			pa.MessageID = packet.MessageID
 			DEBUG.Println(NET, "putting puback msg on obound")
 			persistOutbound(persist, pa)
-			oboundP <- &PacketAndToken{p: pa, t: nil}
+			//oboundP <- &PacketAndToken{p: pa, t: nil}
 			DEBUG.Println(NET, "done putting puback msg on obound")
 		case 0:
 			// do nothing, since there is no need to send an ack packet back
